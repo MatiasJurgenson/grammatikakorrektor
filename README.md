@@ -1,2 +1,2 @@
 # ekko-keko
-programm mis parandab veab eessti keelses tekstis
+programm mis parandab vead eesti keelses tekstis
