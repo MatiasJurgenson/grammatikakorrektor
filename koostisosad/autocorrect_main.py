@@ -50,6 +50,6 @@ def sona_protsent(x):
  
  
 #test
-__input__ = str(input("Vale sõna: "))
-print(sona_protsent(__input__))
+#__input__ = str(input("Vale sõna: "))
+#print(sona_protsent(__input__))
 
