@@ -8,6 +8,6 @@ for rida in fail:
 fail.close()
 
 def oigekiri(sona):
-    if sona in sonastik:
+    if sona in sonastik or sona == "." or sona == "!" or sona == "?":
         return "true"
     

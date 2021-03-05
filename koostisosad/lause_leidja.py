@@ -38,3 +38,4 @@ def lause_avaja(tekst):
 #    tekst = str(input(""))
 #    laused = lause_avaja(tekst)
 #    print(laused)
+#    print(tekst)

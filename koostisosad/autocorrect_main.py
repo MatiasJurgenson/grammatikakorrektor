@@ -1,4 +1,4 @@
-fail = open("lemmad2013.txt", encoding = "UTF-8")
+fail = open("koostisosad/raamatukogu/lemmad2013.txt", encoding = "UTF-8")
 for rida in fail:
     sisu = fail.read()
     sonastik = sisu.splitlines()
@@ -20,7 +20,7 @@ def autocorrect(x):
     valesona = list(x)
     valesona_pikkus = len(valesona)
     for sona in sonastik:
-        if len(sona) < (valesona_pikkus + 2) and len(sona) > (valesona_pikkus - 2) and sona[0] == valesona[0]: 
+        if len(sona) < (valesona_pikkus + 2) and len(sona) > (valesona_pikkus - 2) and sona[0] == valesona[0] and valesona != ".": 
             sobilikud_sonad.append(sona)
             valesona_tahejarg = 0
             sona_tahejarg = 0
