@@ -1,0 +1,76 @@
+{% extends 'baas.html' %}
+
+{% block head %} 
+<style>
+	
+	body {
+		background-color: #f2f2f2; 
+	}
+	
+	
+	.rectangle1 {
+		position: absolute;
+		top: 0;
+		right: 0;	
+		height: 100%;
+		width: 40%;
+		background-color: #33ccff;
+		border-radius: 150px 0px 0px 150px;
+	}
+	
+	.rectangle2 {
+		position: absolute;
+		top: 0;
+		right: 0;	
+		height: 100%;
+		width: 20%;
+		background-color: #0066cc;
+		border-radius: 150px 0px 0px 150px;
+	}
+	
+	.table {
+		list-style-type: none;
+		border: none;
+		padding-top: 20px;
+		padding-left: 50px;
+	}
+	
+	.button {
+		border: none;
+		color: black;
+		padding-left: 50px;
+		text-align: center;
+		text-decoration: none;
+		font-size: 25px;
+	}
+	
+	.tekstiala {
+		width: 50%;	
+		padding-left: 100px;
+	}
+	
+</style>
+{% endblock %}
+
+{% block body %}
+
+<div class="table">
+	<li>
+		<a class="button" href="https://trello.com/b/vEqfnikp/upt" target="_blank">Kodulehekülg</a>
+		<a class="button" style="padding: 10px;" href="https://trello.com/b/vEqfnikp/upt" target="_blank">seaded</a>
+	</li>
+</div>
+
+<div class="tekstiala">
+	<div class="form-group">
+		<textarea class="form-control" id="laused" rows="30" placeholder="Sisetage oma tekst siia"></textarea>
+	</div>
+</div>	
+<div class="rectangle1">
+</div>
+
+<div class="rectangle2">
+</div>
+
+
+{% endblock %}
