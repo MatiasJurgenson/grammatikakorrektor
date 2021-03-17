@@ -19,7 +19,7 @@ def autocorrect(x):
     sobilikud_sonad = []
     valesona = list(x)
     valesona_pikkus = len(valesona)
-    for sona in sonastik:
+    for sona in sonastik:        
         if len(sona) < (valesona_pikkus + 2) and len(sona) > (valesona_pikkus - 2) and sona[0] == valesona[0] and valesona != ".": 
             sobilikud_sonad.append(sona)
             valesona_tahejarg = 0
