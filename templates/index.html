@@ -1,1 +1,148 @@
-stuff
+{% extends 'baas.html' %}
+
+{% block head %} 
+<style>
+	
+	body {
+		background-color: #f2f2f2; 
+	}
+	
+	
+	.rectangle1 {
+		position: absolute;
+		top: 0;
+		right: 0;	
+		height: 100%;
+		width: 40%;
+		background-color: #33ccff;
+		border-radius: 150px 0px 0px 150px;
+	}
+	
+	.rectangle2 {
+		position: absolute;
+		top: 0;
+		right: 0;	
+		height: 100%;
+		width: 20%;
+		background-color: #0066cc;
+		border-radius: 150px 0px 0px 150px;
+	}
+	
+	.table {
+		list-style-type: none;
+		border: none;
+		padding-top: 20px;
+		padding-left: 50px;
+	}
+	
+	.button {
+		border: none;
+		color: black;
+		padding-left: 50px;
+		text-align: center;
+		text-decoration: none;
+		font-size: 25px;
+	}
+	
+	.tekstiala {
+		width: 50%;	
+		padding-left: 100px;
+	}
+	
+	.collapsible {
+		background: rgba(76, 175, 80, 0);
+		border-radius: 10px;
+		
+		color: black;
+		cursor: pointer;
+		padding: 8px;
+		padding-left: 20px;
+		width: 100%;
+		border: none;
+		text-align: left;
+		outline: none;
+		font-size: 30px;
+	}
+	
+	.active, .collapsible:hover {
+		background-color: #999;
+		border: none;
+		outline: none;
+	}
+	
+	.content {
+		padding: 0 18px;
+	    display: none;
+	    overflow: hidden;
+	    background: rgba(89, 170, 255, 0.3);
+		border: none;
+		outline: none;
+	}
+	
+</style>
+{% endblock %}
+
+{% block body %}
+
+<div class="table">
+	<li>
+		<a class="button" href="https://trello.com/b/vEqfnikp/upt" target="_blank">Kodulehekülg</a>
+		<a class="button" style="padding: 10px;" href="https://trello.com/b/vEqfnikp/upt" target="_blank">seaded</a>
+	</li>
+</div>
+
+<div class="tekstiala">
+	<div class="form-group">
+		<form action='/' method='POST'>
+			<textarea class="form-control" rows="30" name='pealkiri' id='pealkiri' placeholder="Sisetage oma tekst siia">{{ laused.dblaused }}</textarea>
+			<input type='submit' value='Kontrollige'>			
+		</form>	
+	</div>
+</div>	
+<div class="rectangle1">
+<! -- vigade printimine -->
+	<h2 style="padding-left: 20%; padding-top: 50px; font-size: 50px">Vead</h2>
+	
+	{%for viga in vead%}
+	
+		<button type="button" style="width: 50%; outline: none;" class="collapsible">{{ viga.dboige }} <a type="button" class="btn btn-danger" style="text-align: left;" href="/delete/{{ viga.id }}">kustuta</a></button>
+			<div class="content">
+			
+			<a class="button"style="padding-left: 10px;" >asendus: </a>
+			{%if (viga.dbviga_1 != 'None') %}
+				<a class="button" style="padding-left: 10px;" href="/asenda/{{ viga.id }}/1">{{ viga.dbviga_1 }}</a>
+			{% endif %}	
+			{%if (viga.dbviga_2 != None) %}	
+				<a class="button" style="padding-left: 10px"href="/asenda/{{ viga.id }}/2" >{{ viga.dbviga_2 }}</a>
+			{% endif %}	
+			{%if (viga.dbviga_3 != None) %}	
+				<a class="button" style="padding-left: 10px" href="/asenda/{{ viga.id }}/3" >{{ viga.dbviga_3 }}</a>
+			{% endif %}
+				
+
+			</div>	
+	{% endfor %}
+
+</div>
+
+<div class="rectangle2">
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+
+{% endblock %}
