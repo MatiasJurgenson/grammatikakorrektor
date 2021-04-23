@@ -1,2 +1,6 @@
 # grammatikakorrektor
-programm mis parandab vead eesti keelses tekstis (nime veel pole)
+programm, mis parandab vead eesti keelses tekstis
+kontrollib:
+1) ainsuse nimetavas käändees olevaid sõnu,
+2) komata ja komaga sidesõnad
+3) lisab koma, kui seda ei ole, küsisõnade ette
